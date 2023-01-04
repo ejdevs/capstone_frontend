@@ -1,3 +1,6 @@
+import { Header } from "./Header";
+import { Home } from "./Home";
+import { Footer } from "./Footer";
 import "./App.css";
 import React from "react";
 import { render } from "react-dom";
@@ -18,10 +21,12 @@ const options = {
 const App = () => (
   <div>
     <HighchartsReact highcharts={Highcharts} options={options} />
+    <Header />
+    <Home />
+    <Footer />
   </div>
 );
 
 render(<App />, document.getElementById("root"));
 
-// Initially was missing the export line below and wouldn't render
 export default App;
