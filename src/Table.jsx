@@ -1,11 +1,11 @@
 export default function Table(props) {
   return (
     <div>
-      <h1>React Axios Get</h1>
+      <h1>{props?.datalogs[0]?.datalog_name}</h1>
+      {/* <h1>Datalog112</h1> */}
       <table className="table table-bordered">
         <tr>
           <th>id</th>
-          <th>datalog_name</th>
           <th>af_correction_1</th>
           <th>af_learning_1</th>
           <th>accel_position</th>
@@ -16,12 +16,10 @@ export default function Table(props) {
           <th>maf_corr_final</th>
           <th>oil_temp</th>
           <th>throttle_pos</th>
-          <th>user_id</th>
         </tr>
         {props.datalogs.map((datalog) => (
           <tr key={datalog.id}>
             <td>{datalog.id}</td>
-            <td>{datalog.datalog_name}</td>
             <td>{datalog.af_correction_1}</td>
             <td>{datalog.af_learning_1}</td>
             <td>{datalog.accel_position}</td>
@@ -32,7 +30,6 @@ export default function Table(props) {
             <td>{datalog.maf_corr_final}</td>
             <td>{datalog.oil_temp}</td>
             <td>{datalog.throttle_pos}</td>
-            <td>{datalog.user_id}</td>
           </tr>
         ))}
       </table>
