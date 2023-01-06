@@ -56,27 +56,28 @@ export function Home() {
           text: "RPM",
         },
         subtitle: {
-          text: "Vroom Vroom",
+          text: " ",
         },
         xAxis: {
           type: "integer",
           title: {
-            text: "Seconds",
+            text: "Time (in seconds)",
           },
         },
         yAxis: {
           title: {
-            text: "tachometer",
+            text: "Tachometer (0 - 8k)",
           },
         },
         series: rpm,
       });
+
       setOilTemp({
         chart: {
           type: "line",
         },
         title: {
-          text: "oilTemp",
+          text: "Oil Temp (F°)",
         },
         subtitle: {
           text: " ",
@@ -84,7 +85,7 @@ export function Home() {
         xAxis: {
           type: "integer",
           title: {
-            text: "Seconds",
+            text: "Time (in seconds)",
           },
         },
         yAxis: {
@@ -94,6 +95,7 @@ export function Home() {
         },
         series: oilTemp,
       });
+
       setExtData({
         chart: {
           type: "line",
@@ -107,7 +109,7 @@ export function Home() {
         xAxis: {
           type: "integer",
           title: {
-            text: "Seconds",
+            text: "Time (in seconds)",
           },
         },
         yAxis: {
@@ -124,7 +126,7 @@ export function Home() {
   useEffect(handleIndexDatalogs, []);
 
   return (
-    <div>
+    <div className="container">
       <HighchartsReact highcharts={Highcharts} options={rpm} />
       <HighchartsReact highcharts={Highcharts} options={oilTemp} />
       <HighchartsReact highcharts={Highcharts} options={extData} />
