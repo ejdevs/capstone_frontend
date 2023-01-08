@@ -9,6 +9,7 @@ export function Home() {
   const [datalogs, setDatalogs] = useState([]);
   const [rpm, setRpm] = useState({});
   const [oilTemp, setOilTemp] = useState({});
+  const [accelThrottle, setAccelThrottle] = useState({});
   const [extData, setExtData] = useState({});
 
   const handleIndexDatalogs = () => {
@@ -18,12 +19,16 @@ export function Home() {
       let extData = [
         { name: "af_correction_1", data: [] },
         { name: "af_learning_1", data: [] },
-        { name: "accel_position", data: [] },
+        // { name: "accel_position", data: [] },
         { name: "boost_extended", data: [] },
         { name: "dyn_adv_mult", data: [] },
         { name: "fine_knock_learn", data: [] },
         { name: "gear_position", data: [] },
         { name: "maf_corr_final", data: [] },
+        // { name: "throttle_pos", data: [] },
+      ];
+      let accelThrottle = [
+        { name: "accel_position", data: [] },
         { name: "throttle_pos", data: [] },
       ];
       let rpm = [{ name: "rpm", data: [] }];
@@ -40,6 +45,18 @@ export function Home() {
       }
 
       for (let k = 0; k < response.data.length; k++) {
+        if (response.data[k]["accel_position"]) {
+          accelThrottle[0]["data"].push([
+            parseFloat(response.data[k]["time"]),
+            parseFloat(response.data[k]["accel_position"]),
+          ]);
+        }
+        if (response.data[k]["throttle_pos"]) {
+          accelThrottle[1]["data"].push([
+            parseFloat(response.data[k]["time"]),
+            parseFloat(response.data[k]["throttle_pos"]),
+          ]);
+        }
         if (response.data[k]["rpm"]) {
           rpm[0]["data"].push([parseFloat(response.data[k]["time"]), parseFloat(response.data[k]["rpm"])]);
         }
@@ -90,10 +107,34 @@ export function Home() {
         },
         yAxis: {
           title: {
-            text: "temp (F)",
+            text: "Degree F°",
           },
         },
         series: oilTemp,
+      });
+
+      setAccelThrottle({
+        chart: {
+          type: "line",
+        },
+        title: {
+          text: "Accelerator : Throttle Position",
+        },
+        subtitle: {
+          text: " ",
+        },
+        xAxis: {
+          type: "integer",
+          title: {
+            text: "Time (in seconds)",
+          },
+        },
+        yAxis: {
+          title: {
+            text: "%",
+          },
+        },
+        series: accelThrottle,
       });
 
       setExtData({
@@ -101,7 +142,7 @@ export function Home() {
           type: "line",
         },
         title: {
-          text: "extData",
+          text: "Air:Fuel, Boost, Gear, Knock",
         },
         subtitle: {
           text: " ",
@@ -128,7 +169,8 @@ export function Home() {
   return (
     <div className="container">
       <HighchartsReact highcharts={Highcharts} options={rpm} />
-      <HighchartsReact highcharts={Highcharts} options={oilTemp} />
+      {/* <HighchartsReact highcharts={Highcharts} options={oilTemp} /> */}
+      <HighchartsReact highcharts={Highcharts} options={accelThrottle} />
       <HighchartsReact highcharts={Highcharts} options={extData} />
       {/* <DatalogsIndex datalogs={datalogs} /> */}
       <Table datalogs={datalogs} />

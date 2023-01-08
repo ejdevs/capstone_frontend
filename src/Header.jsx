@@ -3,8 +3,8 @@ export function Header() {
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            ECView
+          <a class="navbar-brand m-auto" href="#">
+            ViewECU
           </a>
           <button
             class="navbar-toggler"
@@ -17,7 +17,7 @@ export function Header() {
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarColor01">
+          {/* <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
                 <a class="nav-link active" href="#">
@@ -73,7 +73,7 @@ export function Header() {
                 Search
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
       </nav>
     </header>
