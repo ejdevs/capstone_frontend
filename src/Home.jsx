@@ -67,6 +67,8 @@ export function Home() {
 
       setRpm({
         chart: {
+          borderColor: "#6f42c1",
+          borderWidth: 0.5,
           type: "line",
         },
         title: {
@@ -91,6 +93,8 @@ export function Home() {
 
       setOilTemp({
         chart: {
+          borderColor: "#6f42c1",
+          borderWidth: 0.5,
           type: "line",
         },
         title: {
@@ -115,6 +119,8 @@ export function Home() {
 
       setAccelThrottle({
         chart: {
+          borderColor: "#6f42c1",
+          borderWidth: 0.5,
           type: "line",
         },
         title: {
@@ -139,6 +145,8 @@ export function Home() {
 
       setExtData({
         chart: {
+          borderColor: "#6f42c1",
+          borderWidth: 0.5,
           type: "line",
         },
         title: {
@@ -169,7 +177,7 @@ export function Home() {
   return (
     <div className="container">
       <HighchartsReact highcharts={Highcharts} options={rpm} />
-      {/* <HighchartsReact highcharts={Highcharts} options={oilTemp} /> */}
+      <HighchartsReact highcharts={Highcharts} options={oilTemp} />
       <HighchartsReact highcharts={Highcharts} options={accelThrottle} />
       <HighchartsReact highcharts={Highcharts} options={extData} />
       {/* <DatalogsIndex datalogs={datalogs} /> */}
