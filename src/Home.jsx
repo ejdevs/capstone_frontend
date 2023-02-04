@@ -177,7 +177,7 @@ export function Home() {
   return (
     <div className="container">
       <HighchartsReact highcharts={Highcharts} options={rpm} />
-      <HighchartsReact highcharts={Highcharts} options={oilTemp} />
+      {/* <HighchartsReact highcharts={Highcharts} options={oilTemp} /> */}
       <HighchartsReact highcharts={Highcharts} options={accelThrottle} />
       <HighchartsReact highcharts={Highcharts} options={extData} />
       {/* <DatalogsIndex datalogs={datalogs} /> */}
