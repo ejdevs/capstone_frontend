@@ -11,7 +11,8 @@ export default function Table(props) {
             aria-expanded="true"
             aria-controls="collapseOne"
           >
-            {props?.datalogs[0]?.datalog_name}
+            View Datalog
+            {/* {props?.datalogs[0]?.datalog_name} */}
           </button>
         </h1>
         {/* <h1>Datalog112</h1> */}
