@@ -35,6 +35,25 @@ export default function Table(props) {
               <th>maf_corr_final</th>
               <th>oil_temp</th>
               <th>throttle_pos</th>
+              <th>af_sens_1_ratio</th>
+              <th>baro_pressure</th>
+              <th>cl_fuel_target</th>
+              <th>calculated_load</th>
+              <th>comm_fuel_final</th>
+              <th>coolant_temp</th>
+              <th>feedback_knock</th>
+              <th>fuel_pressure</th>
+              <th>fuel_pressure_target</th>
+              <th>ignition_timing</th>
+              <th>inj_duty_cycle</th>
+              <th>intake_temp</th>
+              <th>intake_temp_manifold</th>
+              <th>maf_volts</th>
+              <th>req_torque</th>
+              <th>td_boost_error_ext</th>
+              <th>tgv_map_ratio</th>
+              <th>wastegate_duty</th>
+              {/* <th>ap_info</th> */}
             </tr>
             {props.datalogs.map((datalog) => (
               <tr key={datalog.id}>
@@ -49,6 +68,25 @@ export default function Table(props) {
                 <td>{datalog.maf_corr_final}</td>
                 <td>{datalog.oil_temp}</td>
                 <td>{datalog.throttle_pos}</td>
+                <td>{datalog.af_sens_1_ratio}</td>
+                <td>{datalog.baro_pressure}</td>
+                <td>{datalog.cl_fuel_target}</td>
+                <td>{datalog.calculated_load}</td>
+                <td>{datalog.comm_fuel_final}</td>
+                <td>{datalog.coolant_temp}</td>
+                <td>{datalog.feedback_knock}</td>
+                <td>{datalog.fuel_pressure}</td>
+                <td>{datalog.fuel_pressure_target}</td>
+                <td>{datalog.ignition_timing}</td>
+                <td>{datalog.inj_duty_cycle}</td>
+                <td>{datalog.intake_temp}</td>
+                <td>{datalog.intake_temp_manifold}</td>
+                <td>{datalog.maf_volts}</td>
+                <td>{datalog.req_torque}</td>
+                <td>{datalog.td_boost_error_ext}</td>
+                <td>{datalog.tgv_map_ratio}</td>
+                <td>{datalog.wastegate_duty}</td>
+                {/* <td>{datalog.ap_info}</td> */}
               </tr>
             ))}
           </table>
